@@ -24,9 +24,9 @@
         <div class="pt-4 pt-md-5 pb-4 pt-md-5">
             <div class="container">
                 <div class="row justify-content-between">
-                    <div class="col-sm-12 font-13" style="line-height:20px;">
+                    {{-- <div class="col-sm-12 font-13" style="line-height:20px;">
                         {!! isset($specific_footer) && !empty($specific_footer) ? $specific_footer : $footer_text !!}
-                    </div>
+                    </div> --}}
 
                     <div class="col-sm-12 row font-12 mt-2 mt-md-4">
                         <div class="col-md-4">

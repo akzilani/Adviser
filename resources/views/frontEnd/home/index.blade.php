@@ -36,32 +36,6 @@
         p{line-height: 22px;}
         .question-section .heading_text, question-section .heading_text h1, .heading_text h2, .heading_text *{line-height: 0px; font-size:42px;}
         .blog-card{height: 420px;}
-
-        /*@media only screen and (max-width: 320px){*/
-        /*.ask-now, #question-submit{width: 100%;height:55px; font-size: 21px; padding: 10px;}*/
-        /*.question-box{width: 90%;margin-left: 15px;margin-bottom:0px;}*/
-
-        /*.quick-response{margin-left:-1.3em;}*/
-        /*.quick-response b{font-size: 10px}*/
-        /*.question-box .question .form-control{ font-size:13px;}*/
-
-        /*}*/
-        /*@media only screen and (max-width: 600px){*/
-        /*    .ask-now, #question-submit{width: 100%; font-size: 18px; padding: 0px;}*/
-        /*    .question-box{width: 91%;margin-left: 15px;margin-bottom:0px;}*/
-
-        /*    .quick-response{margin-left:-1.5em;}*/
-
-
-
-        /*}*/
-        /*@media only screen and (max-width: 767px){*/
-        /*    .question-right-box, .question-bottom-box{border-radius: 0px;}*/
-        /*    .question-section .heading_text, .heading_text h1, .heading_text h2, .heading_text h3{text-align: center; line-height:45px;}  */
-        /*    .question-section{background-image:unset !important; }*/
-        /*    .blog-card{height: 350px;}*/
-        /*}*/
-
          @media only screen and (max-width: 2700px){
         .question-right-box, .question-bottom-box{border-radius: 0px;}
         .question-section .heading_text, .heading_text h1, .heading_text h2, .heading_text h3{text-align: center; line-height:45px;}
@@ -302,26 +276,11 @@
         </div>
     </section>
 
-    <!-- Ekomi -->
-    {{-- <div class="container-lg banner" style="margin-top:-60px !important">
-        <div class="row">
-            <div class="col-md-2 text-center">
-                <a href="https://www.ekomi.co.uk/review-regulatedadvicecouk.html">
-                    <img src="{{ asset('/image/ekomi-single.png') }}" class="img-fluid">
-                </a>
-            </div>
-            <div class="col-md-10 widgetreview">
-                <div id="widget-container" class="ekomi-widget-container ekomi-widget-sf957305c54637c4cb89"></div>
-            </div>
-        </div>
-    </div> --}}
-
     <!-- Advisor List -->
     <section class="pb-4 pt-4" >
         <div class="container-lg">
             <div class="row">
                 <div class="col-12" style="text-align:center !important">
-                    {{-- <p class="text-theme font-13 m-0">QUICK LINK TO SOME OF THE BANGLADESH MOST TRUSTED ADVISORS</p> --}}
                     <h3 class="text-theme">Meet some of the Adviser's of Bangladesh</h3>
                 </div>
                 @if( count($advisors) > 0 )
@@ -457,10 +416,6 @@
                                 <div class="card-header bg-theme" >
                                     <div class="row">
                                         <div class="col-sm-7 col-12">
-                                            {{-- <h3 class="text-white">
-                                                {{-- <button class="btn btn-link text-white font-24 p-0" data-toggle="collapse" data-target="#collapse{{$offer->id}}" aria-expanded="true" aria-controls="collapse{{$offer->id}}">{{ $offer->name }}</button> --}}
-                                                {{-- {{ $offer->name }}
-                                            </h3> --}}
                                             <a href="javascript::;" class="btn-link text-white" data-toggle="collapse" data-target="#collapse{{$offer->id}}" aria-expanded="true" aria-controls="collapse{{$offer->id}}">
                                                 <p class="text-white mb-0 font-18">{{ $offer->name }}</p>
                                             </a>
@@ -510,6 +465,62 @@
         </div>
     </section>
 
+    <!-- Videos -->
+    <section class="pb-4 pt-4">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-sm-12" style="text-align:center !important">
+                    <h3 class="text-theme m-0"><b>Videos</b></h3>
+                </div>
+            </div>
+            <div class="row mt-3">
+
+                <div class="col-sm-6 col-md-4 col-lg-4 mt-2">
+                    <div class="card blog-card">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-body pl-2 pr-2" style="height: 320px;">
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/kwRsJ_AHNw4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-4 mt-2">
+                    <div class="card blog-card">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-body pl-2 pr-2" style="height: 320px;">
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/kwRsJ_AHNw4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-4 mt-2">
+                    <div class="card blog-card">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-body pl-2 pr-2" style="height: 320px;">
+
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/kwRsJ_AHNw4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
 
 
 
@@ -522,9 +533,6 @@
             <div class="col-12 col-lg-12">
                 {!! $cookies->trems_and_condition ?? "" !!}
             </div>
-            <!--<div class="col-12 col-lg-5">
-                We use cookies to give you the best online experience.
-            </div>-->
             <div class="col-12 col-lg-7 text-right">
                 <button type="button" class="btn btn-default text-uppercase hide-cookie">I do not accept cookies</button>
                 <button type="button" class="btn btn-primary text-uppercase hide-cookie" style="background: #2E86C1;" >Yes, I accept cookies</button>
@@ -536,29 +544,11 @@
 @stop
 @section("script")
     <script>
-        // @if($errors->has("phone") || $errors->has("email") || $errors->has("post_code") || $errors->has("first_name") || $errors->has("ast_name"))
-        //     $(document).ready(function(){
-        //         $('#ask-now').click();
-        //     });
-        // @endif
-        // $('#ask-now').click(function(){
-        //     if($('#question').val().length >= 5){
-        //         $(".question-part-1").addClass("d-none");
-        //         $(".question-part-2").removeClass("d-none");
-        //     }else{
-        //         $("#question-submit").click();
-        //     }
-        // });
-
         // editing start
          @if($errors->has("phone") || $errors->has("email") || $errors->has("post_code") || $errors->has("first_name") || $errors->has("last_name"))
             $(document).ready(function(){
                 $('#ask-now').click();
             });
-
-            // $(document).ready(function(){
-            //     $('#ask-now_2').click();
-            // });
         @endif
         $('#ask-now').click(function(){
             if($('#question').val().length >= 5){
