@@ -3,11 +3,11 @@
     <style>
         .service-heading{font-size: 20px; font-weight: bold}
         .question-section{background-size: cover; background-repeat: no-repeat; background-position: center;}
-        .question-box{background: #2c77b3; border-radius: 29px;}
+        .question-box{background: #0396A6; border-radius: 29px;}
         .question-section .card{background-color: transparent;}
-        .question-section .card-body{background: #fff; border: 10px solid #2c77b3; border-bottom: 20px solid #2c77b3 ; border-radius: 22px;}
+        .question-section .card-body{background: #fff; border: 10px solid #0396A6; border-bottom: 20px solid #0396A6 ; border-radius: 22px;}
         .no-border, .no-border:focus, no-border:active{border: 0px;}
-        .active-advisor{ background: #2c77b3; width: 100%; color:#fff; padding-top: 10px;}
+        .active-advisor{ background: #0396A6; width: 100%; color:#fff; padding-top: 10px;}
         .question-box .card-body{padding: 0px; }
         .question-box .question{padding: 5px 30px 20px 30px;}
         .question-box .question .form-control{ background: #fff;}
