@@ -1749,7 +1749,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   color: #fff;
 }
 
-/* Service box 
+/* Service box
 
 .ts-service-box .ts-service-icon i {
   font-size: 24px;
@@ -3514,14 +3514,14 @@ label {
 .no-radius{border-radius: 0px !important;}
 .no-border{border: 0px;}
 .btn-theme{background: #2c77b3; color:white;}
-.footer{ background: #2c77b3; color:white;}
+.footer{ background: #0396A6; color:white;}
 .bg-dark{background: #222; color:#fff;}
 .font-12{font-size: 12px;}
 .font-14{font-size: 14px;}
 .font-16{font-size: 16px;}
 .font-18{font-size: 18px;}
 .font-20{font-size: 20px;}
-.bg-theme{ background: #2c77b3; color:white;}
+.bg-theme{ background: #0396A6; color:white;}
 .text-theme{color:#000000;}
 .nav-btn{
   font-family: 'Montserrat', sans-serif;
@@ -3558,7 +3558,7 @@ switch {
   height: 25px;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -3646,12 +3646,12 @@ input:checked + .slider:before {
 
 .progress-step{width: 100%; margin: 30px 0px;}
 .progress-step .line { width:33.33%; float: left;}
-.progress-step .line .progress-line{ 
+.progress-step .line .progress-line{
     background: #fff;
     height:15px;
     border-radius: 5px;
     border:1px solid #aaa;}
-.progress-step .line .node {    
+.progress-step .line .node {
     margin-top: -40px;
     float: right;
     padding: 15px 5px;

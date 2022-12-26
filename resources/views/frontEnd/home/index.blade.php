@@ -79,17 +79,6 @@
         .heading_text_2{ display:block;font-size:28px;padding-top: 1rem;margin-left:23px;}
         .question-part-3{ padding-top: 30px;}
         }
-
-        /* @media only screen and (max-width: 2000px){*/
-
-        /*.question-right-box, .question-bottom-box{border-radius: 0px;}*/
-        /*.question-section .heading_text, .heading_text h1, .heading_text h2, .heading_text h3{text-align: center; line-height:45px;}*/
-        /*.blog-card{height: 350px;}*/
-        /*.question-box{width: 90%;margin-left: 110px;margin-bottom:7em;}*/
-        /*.question-right-box{border-top-right-radius: 40px;border-bottom-right-radius: 40px;margin-bottom: 11rem}*/
-        /*.heading_text_2{ display:block;font-size:38px;margin-bottom: 8px; padding-top: 1.5rem;margin-left: 20px;}*/
-        /*}*/
-
         @media only screen and (max-width: 992px){
         .question-right-box, .question-bottom-box{border-radius: 0px;}
         .question-section .heading_text, .heading_text h1, .heading_text h2, .heading_text h3{text-align: center; line-height:45px;}
@@ -130,7 +119,6 @@
         .quick-response{margin-left:-1.3em;}
         .quick-response b{font-size: 10px}
         .question-box .question .form-control{ font-size:13px;}
-        /*.heading_text_2{display:block;text-align:center;font-size:28px;padding-top: 0rem; padding-top: 0rem;margin-bottom: 0px;color: #000000;letter-spacing:0.5px;}*/
         .heading_text_2{display:block;text-align:center;font-size:20px;padding-top: 0rem; padding-top: 0rem;margin-bottom: 0px;color: #000000}
         .question-section{background-image:unset !important; }
         .question_p_2{padding: 0px}
@@ -148,7 +136,6 @@
                 <div class="col-12 offset-md-1">
                     <div class="col-12"  >
                         <!--{!! $page->heading_text ?? "Your Financial Questions Answered" !!}-->
-                        <!--<strong class=" heading_text_2">Your Financial Questions Answered</strong>-->
                         <span class="heading_text_2">{!! $page->heading_text ?? "Your Financial Questions Answered" !!}</span>
                     </div>
                 </div>
@@ -180,118 +167,6 @@
                                 </div>
                             </div>
                             <div class="card-body" >
-                               <!-- @if($errors->first())
-                                    <div class="container mt-4">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="alert alert-danger">
-                                                    {{ $errors->first() }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif -->
-                                <!--<form class="container question" action="{{ route('quick_question') }}" method="post">-->
-                                <!--    @csrf -->
-                                <!--    <div class="row mb-2 ask-now-progress">-->
-                                <!--        <div class="col-12 p-0">-->
-                                <!--            <span class="progress-text" style="font-weight: bold;">0%</span>-->
-                                <!--            <div class="progress">-->
-                                <!--                <div class="progress-bar" role="progressbar" style="width: 2%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>-->
-                                <!--            </div>-->
-                                <!--            <div class="text-right font-13" >-->
-                                <!--                Find your ideal financial advisor-->
-                                <!--            </div> -->
-                                <!--        </div>-->
-                                <!--    </div>                                  -->
-                                <!--    <div class="row question-part-1">-->
-                                <!--        <div class="col-12 p-0 ">-->
-                                <!--            <textarea name="question" id="question" class="form-control" minlength="5" placeholder="Ask your question or describe your issue here..." style="min-height: 150px;" required >{{ old('question') }}</textarea>-->
-                                <!--        </div>-->
-                                <!--        <div class="col-12 p-0 mt-2">-->
-                                <!--            <select name="service_offer_id" id="service_offer_id" required class="form-control" oninvalid="this.setCustomValidity('Please select an item from the list')">-->
-                                <!--                <option value="" >Areas of advice</option>-->
-                                <!--                @foreach($service_offers as $service_offer)-->
-                                <!--                <option value="{{ $service_offer->id }}" {{ old("service_offer_id") == $service_offer->id ? "selected" : null }} >{{ $service_offer->name }}</option>-->
-                                <!--                @endforeach-->
-                                <!--            </select>-->
-                                <!--        </div>-->
-
-                                <!--        <div class="col-12 mt-3 p-0">-->
-                                <!--            <button class="btn no-radius ask-now" id="ask-now" type="button" style="background-color:#F96E4E">-->
-                                <!--                Ask now-->
-                                <!--            </button>-->
-                                <!--        </div>-->
-                                <!--    </div>-->
-                                <!--    <div class="row question-part-2 d-none ">-->
-                                <!--         First Name -->
-                                <!--        <div class="col-12 p-0 mt-2">-->
-                                <!--            <input name="first_name" id="first_name" value="{{ old('first_name') }}" class="form-control" minlength="2" placeholder="First name" required oninvalid="this.setCustomValidity('First name is required')">-->
-                                <!--            @error("first_name")-->
-                                <!--                <div class="text-danger">{{$message}}</div>-->
-                                <!--            @enderror-->
-                                <!--        </div>-->
-
-                                <!--         Last Name -->
-                                <!--        <div class="col-12 p-0 mt-2">-->
-                                <!--            <input name="last_name" value="{{ old('last_name') }}" class="form-control" placeholder="Last name" required oninvalid="this.setCustomValidity('Lase name is required')">-->
-                                <!--        </div>-->
-
-                                <!--         Email -->
-                                <!--        <div class="col-12 p-0 mt-2">-->
-                                <!--            <div class="input-group">-->
-                                <!--                {{-- <span class="input-group-text"><i class="far fa-envelope"></i></span> --}}-->
-                                <!--                <input type="text" name="email" id="email" value="{{ old('email') }}" class="form-control verify" data-verify_type="email" data-page="home" placeholder="Email address" required minlength="4" oninvalid="this.setCustomValidity('Email is required')">-->
-                                <!--            </div>-->
-                                <!--            @error("email")-->
-                                <!--                <div class="text-danger">{{$message}}</div>-->
-                                <!--            @enderror-->
-                                <!--        </div>-->
-
-                                <!--         Phone No -->
-                                <!--        <div class="col-12 p-0 mt-2">-->
-                                <!--            <div class="input-group">-->
-                                <!--                {{-- <span class="input-group-text"><i class="fas fa-phone-alt"></i></span> --}}-->
-                                <!--                <input type="text" name="phone" id="phone" value="{{ old('phone') }}" class="form-control verify" data-verify_type="phone" data-page="home"  minlength="9" maxlength="15" placeholder="Telephone number" required oninvalid="this.setCustomValidity('Phone number is required')"> -->
-                                <!--                <input type="text" name="phone" id="phone" value="{{ old('phone') }}" class="form-control verify" data-verify_type="phone" data-page="home"  placeholder="Telephone number">-->
-                                <!--            </div>-->
-                                <!--            @error("phone")-->
-                                <!--                <div class="text-danger">{{$message}}</div>-->
-                                <!--            @enderror-->
-                                <!--        </div>-->
-
-                                <!--         Postcode -->
-                                <!--        <div class="col-12 p-0 mt-2">-->
-                                <!--            <input type="text" name="post_code"value="{{ old('post_code') }}" id="post_code" class="form-control verify" data-verify_type="postcode" data-page="home"  placeholder="Enter full postcode" required minlength="4" maxlength="8" oninvalid="this.setCustomValidity('Postcode is required')">-->
-                                <!--            <input type="text" name="post_code"value="{{ old('post_code') }}" id="post_code" class="form-control verify" data-verify_type="postcode" data-page="home"  placeholder="Enter full postcode">-->
-                                <!--            @error("post_code")-->
-                                <!--                <div class="text-danger">{{$message}}</div>-->
-                                <!--            @enderror-->
-                                <!--        </div>-->
-
-                                <!--         Fund Size -->
-                                <!--        <div class="col-12 p-0 mt-2">-->
-                                <!--            <select name="fund_size_id" id="fund_size_id" class="form-control" required oninvalid="this.setCustomValidity('Fund size is required')">-->
-                                <!--            <select name="fund_size_id" id="fund_size_id" class="form-control">-->
-                                <!--                <option value="">Your fund / mortgage value</option>-->
-                                <!--                @foreach ($fund_sizes as $fund_size)-->
-                                <!--                <option value="{{ $fund_size->id }}" {{ old('fund_size_id') == $fund_size->id }}>{{ $fund_size->name }} </option>-->
-                                <!--                @endforeach-->
-                                <!--            </select>-->
-                                <!--            @error("fund_size_id")-->
-                                <!--                <div class="text-danger">{{$message}}</div>-->
-                                <!--            @enderror-->
-                                <!--        </div>-->
-
-                                <!--        <div class="col-12 text-center mt-3 question_p_2">-->
-                                <!--            <button class="btn no-radius" id="question-submit" type="submit" style="background-color:#F96E4E">-->
-                                <!--                >> Find local advisor-->
-                                <!--            </button>-->
-                                <!--            <input type="hidden" id="mortgage_only" name="mortgage_only" value="0">-->
-                                <!--        </div>-->
-                                <!--    </div>-->
-
-                                <!--</form>-->
 
                                 <!--editing part start-->
                                 <form class="container question" action="{{ route('quick_question') }}" method="post">
@@ -343,7 +218,6 @@
                                         <!-- Email -->
                                         <div class="col-12 p-0 mt-2">
                                             <div class="input-group">
-                                                {{-- <span class="input-group-text"><i class="far fa-envelope"></i></span> --}}
                                                 <input type="text" name="email" id="email" value="{{ old('email') }}" class="form-control verify" data-verify_type="email" data-page="home" placeholder="Email address" required minlength="4" oninvalid="this.setCustomValidity('Email is required')">
                                             </div>
                                             @error("email")
@@ -354,8 +228,6 @@
                                         <!-- Phone No -->
                                         <div class="col-12 p-0 mt-2">
                                             <div class="input-group">
-                                                {{-- <span class="input-group-text"><i class="fas fa-phone-alt"></i></span> --}}
-                                                <!--<input type="text" name="phone" id="phone" value="{{ old('phone') }}" class="form-control verify" data-verify_type="phone" data-page="home"  minlength="9" maxlength="15" placeholder="Telephone number" required oninvalid="this.setCustomValidity('Phone number is required')"> -->
                                                 <input type="text" name="phone" id="phone" value="{{ old('phone') }}" class="form-control verify" data-verify_type="phone" data-page="home"  placeholder="Telephone number">
                                             </div>
                                             @error("phone")
@@ -363,33 +235,6 @@
                                             @enderror
                                         </div>
 
-                                        <!-- Postcode -->
-                                        {{-- <div class="col-12 p-0 mt-2">
-                                            <input type="text" name="post_code"value="{{ old('post_code') }}" id="post_code" class="form-control verify" data-verify_type="postcode" data-page="home"  placeholder="Enter full postcode">
-                                            @error("post_code")
-                                                <div class="text-danger">{{$message}}</div>
-                                            @enderror
-                                        </div> --}}
-
-                                        <!-- Fund Size -->
-                                        {{-- <div class="col-12 p-0 mt-2">
-                                            <select name="fund_size_id" id="fund_size_id" class="form-control">
-                                                <option value="">Your fund / mortgage value</option>
-                                                @foreach ($fund_sizes as $fund_size)
-                                                <option value="{{ $fund_size->id }}" {{ old('fund_size_id') == $fund_size->id }}>{{ $fund_size->name }} </option>
-                                                @endforeach
-                                            </select>
-                                            @error("fund_size_id")
-                                                <div class="text-danger">{{$message}}</div>
-                                            @enderror
-                                        </div> --}}
-
-                                        {{-- <div class="col-12 text-center mt-3 question_p_2">
-                                            <button class="btn no-radius" id="question-submit" type="submit" style="background-color:#F96E4E">
-                                                >> Find local advisor
-                                            </button>
-                                            <input type="hidden" id="mortgage_only" name="mortgage_only" value="0">
-                                        </div> --}}
                                         <div class="col-12 mt-3 p-0">
                                             <button class="btn no-radius ask-now_2" id="ask-now_2" type="button" style="background-color:#F96E4E">
                                               Match me to my advisor
@@ -432,18 +277,6 @@
 
 
                                 <div class="row">
-                                    {{-- <div class="col-8 col-sm-7 active-advisor">
-                                        <div class="row font-14">
-                                            <div class="col-7 p-0 font-13">
-                                                All advisors
-                                                <label class="switch">
-                                                    <input type="checkbox" id="all_advisor">
-                                                    <span class="slider round font-14"></span>
-                                                </label>
-                                            </div>
-                                            <span class="col-5 font-13 p-0">Mortgage only</span>
-                                        </div>
-                                    </div> --}}
                                     <div class="col-12 active-advisor text-right font-13">
                                         <i aria-hidden="true" class="fa fa-circle text-success"></i>
                                         <input type="hidden" id="all_active_advisor" value="{{ $active_advisor }}">
@@ -488,8 +321,8 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12" style="text-align:center !important">
-                    <p class="text-theme font-13 m-0">QUICK LINK TO SOME OF THE BANGLADESH MOST TRUSTED ADVISORS</p>
-                    <h3 class="text-theme">Meet some of Adviser Bangladesh biggest contributors</h3>
+                    {{-- <p class="text-theme font-13 m-0">QUICK LINK TO SOME OF THE BANGLADESH MOST TRUSTED ADVISORS</p> --}}
+                    <h3 class="text-theme">Meet some of the Adviser's of Bangladesh</h3>
                 </div>
                 @if( count($advisors) > 0 )
                     <div class="col-12" id="advisor-owl-carousel" >
@@ -530,76 +363,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Services -->
-    <section class="pb-4 pt-4">
-        <div class="container-lg">
-            <div class="row justify-content-center">
-                <div class="col-12" style="text-align:center !important">
-                    <p class="text-theme font-13 m-0">SEARCH PREVIOSULY POSTED CASE STUDIES</p>
-                    <h3 class="text-theme">Recent case studies</h3>
-                </div>
-                <div class="col-12">
-                    <div id="accordion">
-                        @foreach($service_offers as $offer)
-                            <div class="card mt-1">
-                                <div class="card-header bg-theme" >
-                                    <div class="row">
-                                        <div class="col-sm-7 col-12">
-                                            {{-- <h3 class="text-white">
-                                                {{-- <button class="btn btn-link text-white font-24 p-0" data-toggle="collapse" data-target="#collapse{{$offer->id}}" aria-expanded="true" aria-controls="collapse{{$offer->id}}">{{ $offer->name }}</button> --}}
-                                                {{-- {{ $offer->name }}
-                                            </h3> --}}
-                                            <a href="javascript::;" class="btn-link text-white" data-toggle="collapse" data-target="#collapse{{$offer->id}}" aria-expanded="true" aria-controls="collapse{{$offer->id}}">
-                                                <p class="text-white mb-0 font-18">{{ $offer->name }}</p>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-4 col-11 font-12 text-right d-none d-sm-block">{{ $offer->ans_questions->count() }} case studies</div>
-                                        <div class="col-sm-4 col-10 font-12 d-sm-none">{{ $offer->ans_questions->count() }} case studies</div>
-                                        <div class="col-sm-1 col-1 text-right">
-                                            <button class="btn btn-link text-white font-20 p-0" data-toggle="collapse" data-target="#collapse{{$offer->id}}" aria-expanded="true" aria-controls="collapse{{$offer->id}}">+</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div id="collapse{{$offer->id}}" class="collapse" data-parent="#accordion">
-                                    <div class="card-body row">
-                                        <div class="col-12 col-md-12">
-                                            <div class="row">
-                                                <div class="col-1">
-                                                    <img src="{{ asset($offer->image ?? "image/not-found.png") }}" height="75px" width="75px" class="img-fluid">
-                                                </div>
-                                                <div class="col-11  font-14">
-                                                    <a href="{{ route('service_view_all_questions',['id' => $offer->id, 'service' => Str::slug($offer->name)]) }}" class="btn-link">
-                                                        <h3 class="text-theme mb-0">{{ $offer->name }}</h3>
-                                                    </a>
-                                                    <p class="font-weight-bold font-14">
-                                                        {{ $offer->description }}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        @foreach($offer->ans_questions as $question)
-                                            <div class="col-12 col-md-12">
-                                                <div class="bg-light p-2 mt-2">
-                                                    <a href="{{ route('service_view_question',['question_id' => $question->id, 'service' => Str::slug($offer->name)]) }}" >{{ $question->question}}</a> <small class="float-right">{{ Carbon\Carbon::parse($question->created_at)->format($system->date_format) }}</small>
-                                                </div>
-                                            </div>
-                                            @if($loop->iteration >= 25)
-                                                @break
-                                            @endif
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
 
     <!--We Give you -->
     <section class="pb-4 pt-4" id="number_counter">
@@ -677,6 +440,80 @@
             </div>
         </div>
     </section>
+
+
+    <!-- Services -->
+    <section class="pb-4 pt-4">
+        <div class="container-lg">
+            <div class="row justify-content-center">
+                <div class="col-12" style="text-align:center !important">
+                    <p class="text-theme font-13 m-0">SEARCH PREVIOSULY POSTED CASE STUDIES</p>
+                    <h3 class="text-theme">Recent case studies</h3>
+                </div>
+                <div class="col-12">
+                    <div id="accordion">
+                        @foreach($service_offers as $offer)
+                            <div class="card mt-1">
+                                <div class="card-header bg-theme" >
+                                    <div class="row">
+                                        <div class="col-sm-7 col-12">
+                                            {{-- <h3 class="text-white">
+                                                {{-- <button class="btn btn-link text-white font-24 p-0" data-toggle="collapse" data-target="#collapse{{$offer->id}}" aria-expanded="true" aria-controls="collapse{{$offer->id}}">{{ $offer->name }}</button> --}}
+                                                {{-- {{ $offer->name }}
+                                            </h3> --}}
+                                            <a href="javascript::;" class="btn-link text-white" data-toggle="collapse" data-target="#collapse{{$offer->id}}" aria-expanded="true" aria-controls="collapse{{$offer->id}}">
+                                                <p class="text-white mb-0 font-18">{{ $offer->name }}</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4 col-11 font-12 text-right d-none d-sm-block">{{ $offer->ans_questions->count() }} case studies</div>
+                                        <div class="col-sm-4 col-10 font-12 d-sm-none">{{ $offer->ans_questions->count() }} case studies</div>
+                                        <div class="col-sm-1 col-1 text-right">
+                                            <button class="btn btn-link text-white font-20 p-0" data-toggle="collapse" data-target="#collapse{{$offer->id}}" aria-expanded="true" aria-controls="collapse{{$offer->id}}">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="collapse{{$offer->id}}" class="collapse" data-parent="#accordion">
+                                    <div class="card-body row">
+                                        <div class="col-12 col-md-12">
+                                            <div class="row">
+                                                <div class="col-1">
+                                                    <img src="{{ asset($offer->image ?? "image/not-found.png") }}" height="75px" width="75px" class="img-fluid">
+                                                </div>
+                                                <div class="col-11  font-14">
+                                                    <a href="{{ route('service_view_all_questions',['id' => $offer->id, 'service' => Str::slug($offer->name)]) }}" class="btn-link">
+                                                        <h3 class="text-theme mb-0">{{ $offer->name }}</h3>
+                                                    </a>
+                                                    <p class="font-weight-bold font-14">
+                                                        {{ $offer->description }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @foreach($offer->ans_questions as $question)
+                                            <div class="col-12 col-md-12">
+                                                <div class="bg-light p-2 mt-2">
+                                                    <a href="{{ route('service_view_question',['question_id' => $question->id, 'service' => Str::slug($offer->name)]) }}" >{{ $question->question}}</a> <small class="float-right">{{ Carbon\Carbon::parse($question->created_at)->format($system->date_format) }}</small>
+                                                </div>
+                                            </div>
+                                            @if($loop->iteration >= 25)
+                                                @break
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
 
     <!-- cookies Section -->
     @if( !empty($cookies) )

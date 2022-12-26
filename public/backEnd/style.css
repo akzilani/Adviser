@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : Jun 21, 2019, 10:59:30 AM
     Author     : Shaju
 */
@@ -36,10 +36,10 @@ ________________________________________________________________________________
 }
 
 .active-menu, .active-menu a:hover{
-    background: #000029 !important; 
+    background: #000029 !important;
 }
 .pcoded .pcoded-item > li.active-menu > a{
-    background: #000029 !important; 
+    background: #000029 !important;
 }
 .active-menu .active-subMenu a{
     background : #2f4364;
@@ -97,7 +97,7 @@ ________________________________________________________________________________
 .ck-rounded-corners .ck.ck-balloon-panel, .ck.ck-balloon-panel.ck-rounded-corners {
     z-index: 10055 !important;
 }
-.ck.ck-reset_all input{position: relative;  z-index: 10056 !important;} 
+.ck.ck-reset_all input{position: relative;  z-index: 10056 !important;}
 .select2-container--default .select2-selection--single .select2-selection__rendered{
     background: unset;
     padding: unset;
