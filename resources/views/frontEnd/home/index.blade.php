@@ -465,20 +465,12 @@
                         By submitting your details, you agree to be connected with a financial advisor. </li>
                     </ol>
                 </div>
-                <!--<div class="col-sm-12 col-md-7 col-lg-5 offset-md-1 p-0 mb-2">
-                    <div class="question-bottom-box text-white ml-0 ml-md-3 mr-0 mr-md-3 p-4 mb-5">
-                        <i class="fas fa-lock text-success"></i> <strong>GDPR Compliant.</strong>
-                        Please view our <a href="{{ route('privacy_policy') }}" target="_blank">Privacy Policy</a> <br>
-                        By submitting your details, you agree to be connected with a Financial Advisor.
-
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
 
     <!-- Ekomi -->
-    <div class="container-lg banner" style="margin-top:-60px !important">
+    {{-- <div class="container-lg banner" style="margin-top:-60px !important">
         <div class="row">
             <div class="col-md-2 text-center">
                 <a href="https://www.ekomi.co.uk/review-regulatedadvicecouk.html">
@@ -489,7 +481,55 @@
                 <div id="widget-container" class="ekomi-widget-container ekomi-widget-sf957305c54637c4cb89"></div>
             </div>
         </div>
-    </div>
+    </div> --}}
+
+    <!-- Advisor List -->
+    <section class="pb-4 pt-4" >
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-12" style="text-align:center !important">
+                    <p class="text-theme font-13 m-0">QUICK LINK TO SOME OF THE BANGLADESH MOST TRUSTED ADVISORS</p>
+                    <h3 class="text-theme">Meet some of Adviser Bangladesh biggest contributors</h3>
+                </div>
+                @if( count($advisors) > 0 )
+                    <div class="col-12" id="advisor-owl-carousel" >
+                        <!-- Set up your HTML -->
+                        <div class="owl-carousel">
+                            @foreach($advisors as $advisor)
+                                <div class="bg-theme text-center p-3" style="height: 375px;overflow: hidden;">
+                                    <center>
+                                        <img src="{{ asset(isset($advisor->image) && file_exists($advisor->image) ? $advisor->image : 'image/dummy_user.jpg') }}" class="img-fluid rounded-circle img-thumbnail" style="height: 120px; width:120px">
+                                    </center>
+                                    <h4 class="mt-3 text-white">
+                                        <a href="{{ route('advisor_profile',['profession' =>Str::slug($advisor->profession->name ?? 'N-A'), 'location' => str::slug($advisor->town ?? "N-A"), 'name_id' => $advisor->id .'-'.($advisor->first_name . '-' . $advisor->last_name)]) }}" target="_blank">
+                                            {{$advisor->first_name }} {{$advisor->last_name }}
+                                        </a>
+                                    </h4>
+                                    <h4 class="mt-3">
+                                        @for($i = 1; $i <= 5; $i++)
+                                            @if($i <= $advisor->non_specific_rating)
+                                                <i class="fas fa-star text-warning"></i>
+                                            @else
+                                                <i class="far fa-star"></i>
+                                            @endif
+                                        @endfor
+                                    </h4>
+                                    @if($advisor->firm_details)
+                                        <p class="p-0 m-0 font-12 line-heigh-14">{{$advisor->firm_details->profile_name}}</p>
+                                    @endif
+                                    @if( ($advisor->testimonial->count() + $advisor->advisor_questions->count()) >= 2)
+                                        <p class="p-0 m-0 font-12 line-heigh-14"> {{  ($advisor->testimonial->count() + $advisor->advisor_questions->count()) }} Testimonials & Case Studies Posted</p>
+                                    @endif
+                                    <a href="{{ route('advisor_profile',['profession' =>Str::slug($advisor->profession->name ?? 'N-A'), 'location' => str::slug($advisor->town ?? "N-A"), 'name_id' => $advisor->id .'-'.($advisor->first_name . '-' . $advisor->last_name)]) }}" target="_blank" class="btn btn-success mt-4 no-radius" >Contact {{ $advisor->first_name }}</a>
+                                    {{-- <a href="{{ route('contact_advisor',[$advisor->id]) }}" class="btn btn-md mt-4 no-radius" style="background-color:#2ECC71;color:#FDFEFE;font-size:15px;">Email {{ $advisor->first_name }}</a>                                     --}}
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                @endif
+            </div>
+        </div>
+    </section>
 
     <!-- Services -->
     <section class="pb-4 pt-4">
@@ -559,54 +599,7 @@
         </div>
     </section>
 
-    <!-- Advisor List -->
-    <section class="pb-4 pt-4" >
-        <div class="container-lg">
-            <div class="row">
-                <div class="col-12" style="text-align:center !important">
-                    <!--<p class="text-theme font-13 m-0">QUICK LINK TO SOME OF THE UK’S MOST TRUSTED ADVISOR</p>-->
-                    <p class="text-theme font-13 m-0">QUICK LINK TO SOME OF THE UK’S MOST TRUSTED ADVISORS</p>
-                    <h3 class="text-theme">Meet some of Regulated Advice biggest contributors</h3>
-                </div>
-                @if( count($advisors) > 0 )
-                    <div class="col-12" id="advisor-owl-carousel" >
-                        <!-- Set up your HTML -->
-                        <div class="owl-carousel">
-                            @foreach($advisors as $advisor)
-                                <div class="bg-theme text-center p-3" style="height: 375px;overflow: hidden;">
-                                    <center>
-                                        <img src="{{ asset(isset($advisor->image) && file_exists($advisor->image) ? $advisor->image : 'image/dummy_user.jpg') }}" class="img-fluid rounded-circle img-thumbnail" style="height: 120px; width:120px">
-                                    </center>
-                                    <h4 class="mt-3 text-white">
-                                        <a href="{{ route('advisor_profile',['profession' =>Str::slug($advisor->profession->name ?? 'N-A'), 'location' => str::slug($advisor->town ?? "N-A"), 'name_id' => $advisor->id .'-'.($advisor->first_name . '-' . $advisor->last_name)]) }}" target="_blank">
-                                            {{$advisor->first_name }} {{$advisor->last_name }}
-                                        </a>
-                                    </h4>
-                                    <h4 class="mt-3">
-                                        @for($i = 1; $i <= 5; $i++)
-                                            @if($i <= $advisor->non_specific_rating)
-                                                <i class="fas fa-star text-warning"></i>
-                                            @else
-                                                <i class="far fa-star"></i>
-                                            @endif
-                                        @endfor
-                                    </h4>
-                                    @if($advisor->firm_details)
-                                        <p class="p-0 m-0 font-12 line-heigh-14">{{$advisor->firm_details->profile_name}}</p>
-                                    @endif
-                                    @if( ($advisor->testimonial->count() + $advisor->advisor_questions->count()) >= 2)
-                                        <p class="p-0 m-0 font-12 line-heigh-14"> {{  ($advisor->testimonial->count() + $advisor->advisor_questions->count()) }} Testimonials & Case Studies Posted</p>
-                                    @endif
-                                    <a href="{{ route('advisor_profile',['profession' =>Str::slug($advisor->profession->name ?? 'N-A'), 'location' => str::slug($advisor->town ?? "N-A"), 'name_id' => $advisor->id .'-'.($advisor->first_name . '-' . $advisor->last_name)]) }}" target="_blank" class="btn btn-success mt-4 no-radius" >Contact {{ $advisor->first_name }}</a>
-                                    {{-- <a href="{{ route('contact_advisor',[$advisor->id]) }}" class="btn btn-md mt-4 no-radius" style="background-color:#2ECC71;color:#FDFEFE;font-size:15px;">Email {{ $advisor->first_name }}</a>                                     --}}
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                @endif
-            </div>
-        </div>
-    </section>
+
 
     <!--We Give you -->
     <section class="pb-4 pt-4" id="number_counter">
