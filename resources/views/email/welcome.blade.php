@@ -166,14 +166,14 @@
                                                             Firm Website: {{ $advisor->firm_details->firm_website_address ?? "" }} <br>
                                                             <hr>
                                                             Minimum Fund Size: {{ $advisor->fund_size->name }}
-                                                            
+
                                                             <br> <br><br>
 
                                                             Services Offered <hr>
                                                             @foreach($advisor->service_offered() as $offer)
                                                                 {!! $offer->name !!} <br>
                                                             @endforeach
-                                                            
+
                                                             <br><br>
                                                             Billing Address <hr>
                                                             Name:  {{ $advisor->billing_info->contact_name ?? "" }} <br>

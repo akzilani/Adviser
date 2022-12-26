@@ -32,7 +32,7 @@
             }
         </style>
 
-        
+
     </head>
     <body class="body template">
         <div class="pb-2 pt-2">

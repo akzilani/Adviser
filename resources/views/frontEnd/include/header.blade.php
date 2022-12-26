@@ -9,7 +9,7 @@
     <!-- Mobile Specific Metas
     ================================================== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Regulated Advice">
+    <meta name="description" content="Adviser Bangladesh">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
     <!-- Favicon
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{{ asset('frontEnd/plugins/slick/slick-theme.css') }}">
     <!-- Colorbox -->
     <link rel="stylesheet" href="{{ asset('frontEnd/plugins/colorbox/colorbox.css') }}">
-    
+
     <!-- Owl carousel -->
     <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.theme.default.min.css') }}">
@@ -41,9 +41,9 @@
     <!-- Select 2 -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet"> 
-    
-    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+
+
     <!-- Global site tag (gtag.js) - Google Ads: 931329483 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-931329483"></script>
     <script>

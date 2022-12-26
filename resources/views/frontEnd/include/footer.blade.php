@@ -31,8 +31,8 @@
                     <div class="col-sm-12 row font-12 mt-2 mt-md-4">
                         <div class="col-md-4">
                             Are you an advisor? <br>
-                            <a href="{{ route('login') }}" class="btn btn-md  pl-3 pr-3 no-radius" style="background-color:#FFCD7F;color:#000000;">Log in</a>
-                            <a href="{{ route('register') }}" class="btn btn-md  pl-3 pr-3 no-radius" style="background-color:#FFCD7F;color:#000000;">Sign up</a>
+                            <a href="{{ route('login') }}" class="btn btn-md  pl-3 pr-3" style="background-color:#ffffff;color:#000000;">Log in</a>
+                            <a href="{{ route('register') }}" class="btn btn-md  pl-3 pr-3" style="background-color:#ffffff;color:#000000;">Sign up</a>
                         </div>
                         <div class="col-md-8 row mt-2 mt-sm-0">
                             <div class="col-md-4 col-sm-6 footer-nav-menu mt-3 mt-md-0 font-13">

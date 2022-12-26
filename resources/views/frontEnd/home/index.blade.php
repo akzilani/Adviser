@@ -313,7 +313,6 @@
                                         <p class="p-0 m-0 font-12 line-heigh-14"> {{  ($advisor->testimonial->count() + $advisor->advisor_questions->count()) }} Testimonials & Case Studies Posted</p>
                                     @endif
                                     <a href="{{ route('advisor_profile',['profession' =>Str::slug($advisor->profession->name ?? 'N-A'), 'location' => str::slug($advisor->town ?? "N-A"), 'name_id' => $advisor->id .'-'.($advisor->first_name . '-' . $advisor->last_name)]) }}" target="_blank" class="btn btn-success mt-4 no-radius" >Contact {{ $advisor->first_name }}</a>
-                                    {{-- <a href="{{ route('contact_advisor',[$advisor->id]) }}" class="btn btn-md mt-4 no-radius" style="background-color:#2ECC71;color:#FDFEFE;font-size:15px;">Email {{ $advisor->first_name }}</a>                                     --}}
                                 </div>
                             @endforeach
                         </div>
@@ -394,7 +393,7 @@
                 @endforeach
 
                 <div class="col-sm-12 mt-3 text-center">
-                    <a href="{{ route('blogs') }}" class="btn btn-md no-radius" style="background-color:#FFCD7F;color:#000000;font-size:15px;">Read more blogs</a>&nbsp;&nbsp; <a class="btn btn-md no-radius" style="background-color:#FFCD7F;color:#000000;font-size:15px;" href="{{ route('about_us') }}">About us</a>
+                    <a href="{{ route('blogs') }}" class="btn btn-md" style="background-color:#0396A6;color:#ffffff;font-size:15px;">Read more blogs</a>&nbsp;&nbsp; <a class="btn btn-md" style="background-color:#0396A6;color:#ffffff;font-size:15px;" href="{{ route('about_us') }}">About us</a>
                 </div>
             </div>
         </div>

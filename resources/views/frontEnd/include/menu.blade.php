@@ -37,7 +37,7 @@
 </style>
 
 
-<body class="body-inner" >  
+<body class="body-inner" >
 
     <!-- Header start -->
     <header id="header">
@@ -54,12 +54,12 @@
                             <div class="row">
                                 <div class="col-sm-4 text-left header-auth-button ">
                                     <strong>Are you an advisor?</strong> <br>
-                                    <a href="{{ route('login') }}" class="btn btn-md  pl-3 pr-3 no-radius" style="background-color:#FFCD7F;color:#000000;">Log in</a>
-                                    <a href="{{ route('register') }}" class="btn btn-md pl-3 pr-3 no-radius" style="background-color:#FFCD7F;color:#000000;">Sign up</a>
+                                    <a href="{{ route('login') }}" class="btn btn-md  pl-3 pr-3 " style="background-color:#0396A6;color:#ffffff;">Log in</a>
+                                    <a href="{{ route('register') }}" class="btn btn-md pl-3 pr-3 " style="background-color:#0396A6;color:#ffffff;">Sign up</a>
                                 </div>
                                 <div class="col-sm-7 text-right mt-3 p-xl-0 tips_and_guides">
                                     <a href="{{ route('tips_and_guides') }}" style="color:#000000;font-weight: bold;font-size:18px;">Tips & guides</a>
-                                    
+
                                 </div>
                                 <div class="col-sm-1 text-right mt-3 p-xl-0 open_side_navigation">
                                     <a href="javascript::;" id="open_side_navigation" class="font-weight-bold pl-3 pr-4 pr-xl-0"><i class="fa-2x fas fa-bars" style="color:#000000"></i></a>
@@ -73,7 +73,7 @@
                             </div>
                         </div><!-- header right end -->
                     </div><!-- logo area end -->
-            
+
                 </div><!-- Row end -->
             </div>
             <!-- Container end -->
@@ -86,7 +86,7 @@
             <button class="navbar-toggler bg-theme" type="button" data-toggle="collapse" data-target="#navigation_menu" aria-controls="navigation_menu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-          
+
             <div class="collapse navbar-collapse" id="navigation_menu" style="border-top:1px solid cornsilk;">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -98,10 +98,10 @@
                         <a class="nav-link text-white" href="{{ route('privacy_policy') }}">Privacy policy</a>
                         <!-- <a class="nav-link text-white" href="{{ route('advisor.subscription_plan') }}">Our plans</a> -->
                         <!-- <a class="nav-link text-white" href="{{ route('legal_stuff') }}">Legal stuff</a> -->
-                        
-                        
-                    </li>                    
-                </ul>                
+
+
+                    </li>
+                </ul>
             </div>
           </nav>
         <!-- Navigation end -->
@@ -143,7 +143,6 @@
                     <a class="nav-link font-weight-bold pl-0" href="{{ route('tips_and_guides') }}">Tips & guides</a>
                 </li>
             </ul>
-        </div>        
+        </div>
     </div>
 
-    
