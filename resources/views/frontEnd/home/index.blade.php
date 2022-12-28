@@ -355,46 +355,33 @@
         </div>
     </section>
 
-    <!-- Blogs -->
+    <!-- Area of Advice -->
     <section class="pb-4 pt-4">
         <div class="container-lg">
             <div class="row">
                 <div class="col-sm-12" style="text-align:center !important">
                     <p class="text-theme font-13 m-0">EXPLORE OUR TREASURY OF TIPS & GUIDES FOR EVERY STAGE OF LIFE</p>
-                    <h3 class="text-theme m-0"><b>Blogs</b></h3>
+                    <h3 class="text-theme m-0"><b>Advisor</b></h3>
                 </div>
             </div>
             <div class="row mt-3">
-                @foreach($blogs as $blog)
-                <?php
-                    $admin = $blog->createdBy;
-                ?>
-                <div class="col-sm-6 col-md-4 col-lg-3 mt-2">
-                    <div class="card blog-card">
-                        <div class="row">
-                            <div class="col-12">
-                                <img src="{{ asset($blog->image ?? 'image/not-found.png') }}" class="card-img-top" alt="Image" style="height:180px;">
-                                <div class="card-body pl-2 pr-2" style="height: 320px;">
-                                    <h4 class="text-theme font-18">
-                                        <a href="{{ route('view_blog',[$blog->slug]) }}">{{ $blog->title }}</a>
-                                    </h4>
-                                    <p class="card-text ">
-                                        <?php
-                                            $text_length =  strlen($blog->description) < 100 ? strlen($blog->description) : strpos($blog->description, ' ', 90);
-                                        ?>
-                                        {!! strip_tags(substr($blog->description, 0, $text_length )) !!} ...
-                                    </p>
-                                    <a href="{{ route('view_blog',[$blog->slug]) }}" class="btn btn-link pl-0 float-right" style="color:black !important">Read More</a>
+
+                @foreach($area_of_advices as $data)
+                    <div class="col-sm-6 col-md-3 mt-2">
+                        <div class="card">
+                            <img src="{{ asset(file_exists($data->image) ? $data->image : 'image/tea-cup.png') }}" class="img-fluid" alt="Image" style="height: 160px">
+                            <div class="card-body">
+                                <div style="height: 55px;">
+                                    <h4 class="card-title text-theme font-18 mb-0 pb-0">{!! $data->title ?? "" !!}</h4>
                                 </div>
+                                <div class="card-text" style="height: 140px;">
+                                    {!! strip_tags(substr($data->description, 0, strpos($data->description, ' ', 140))) !!}...
+                                </div>
+                                <a href="{{ route('view_tips_and_guides',[$data->slug]) }}" class="btn btn-link pl-0 float-right" style="color:black !important">Read More</a>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
-
-                <div class="col-sm-12 mt-3 text-center">
-                    <a href="{{ route('blogs') }}" class="btn btn-md" style="background-color:#0396A6;color:#ffffff;font-size:15px;">Read more blogs</a>&nbsp;&nbsp; <a class="btn btn-md" style="background-color:#0396A6;color:#ffffff;font-size:15px;" href="{{ route('about_us') }}">About us</a>
-                </div>
             </div>
         </div>
     </section>
@@ -517,13 +504,6 @@
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
 
     <!-- cookies Section -->
     @if( !empty($cookies) )
