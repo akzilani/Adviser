@@ -20,9 +20,9 @@
         .owl-nav .owl-prev{position: absolute; left: -35px; top:170px; }
         .owl-nav .owl-next{position: absolute; right: -35px;top:170px; }
         .owl-nav.disabled { display: block !important; }
-        .ask-now{ color:#FFFFFF; font-weight: bold; padding:10px 40px; width: 100%; height: 75px;font-size: 24px;  background-color:rgb(245, 122, 5); transition: all .5s; border: 3px solid #ffffff;}
+        .ask-now{ color:#FFFFFF; font-weight: bold; padding:10px 40px; width: 100%; height: 75px;font-size: 20px; color:#0396A6; transition: all .5s; border: 2px solid #DADADA;}
         .ask-now_2{ color:#FFFFFF; font-weight: bold; padding:10px 40px; width: 100%; height: 75px;font-size: 24px;  background-color:rgb(245, 122, 5); transition: all .5s; border: 3px solid #ffffff;}
-        .ask-now:hover, #question-submit:hover{ background-color: #2ECC71 !important; color:#fff;}
+        .ask-now:hover, #question-submit:hover{ background-color: #0396A6 !important; color:#fff;}
         #question-submit{color:#FDFEFE; font-weight: bold; font-size:24px; width: 358px; height: 71px; background-color:#2ECC71; transition: all .2s; border: 2px solid #ffffff;}
         #question-submit:hover{background-color:rgb(245, 122, 5);}
         .ask-now_2:hover, #question-submit:hover{ background-color: #2ECC71 !important; color:#fff;}
@@ -170,8 +170,8 @@
                                         </div>
 
                                         <div class="col-12 mt-3 p-0">
-                                            <button class="btn no-radius ask-now" id="ask-now" type="button" style="background-color:#F96E4E">
-                                               Find local advisor
+                                            <button class="btn no-radius ask-now" id="ask-now" type="button" style="">
+                                               Find Your Nearest Advisor
                                             </button>
                                         </div>
                                     </div>

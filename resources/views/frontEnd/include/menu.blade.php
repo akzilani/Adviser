@@ -1,47 +1,69 @@
 <style>
-.buttonlogin {
-  position: relative;
-  background-color: #04AA6D;
-  border: none;
-  font-size: 28px;
-  color: #FFFFFF;
-  padding: 20px;
-  width: 200px;
-  text-align: center;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  text-decoration: none;
-  overflow: hidden;
-  cursor: pointer;
-}
+    .header_part{
+        margin: 0px;
+        padding: 0px;
+    }
+    .img_part{
+    background-image: url("{{ asset('frontEnd/images/header_logo.jpg') }}");
+    background-repeat: no-repeat;
+    /* background-position: cover; */
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    }
+    .header_logo{
+    height: 70%;
+    width:50%;
+    text-align: center;
+    margin: auto;
+    display: block;
+    padding-top: 20px;
+    }
+    .buttonlogin {
+    position: relative;
+    background-color: #04AA6D;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    }
 
-.buttonlogin:after {
-  content: "";
-  background: #90EE90;
-  display: block;
-  position: absolute;
-  padding-top: 300%;
-  padding-left: 350%;
-  margin-left: -20px!important;
-  margin-top: -120%;
-  opacity: 0;
-  transition: all 0.8s
-}
+    .buttonlogin:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+    }
 
-.buttonlogin:active:after {
-  padding: 0;
-  margin: 0;
-  opacity: 1;
-  transition: 0s
-}
+    .buttonlogin:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+    }
 </style>
 
 
-<body class="body-inner" >
+<body class="" >
 
     <!-- Header start -->
     <header id="header">
-        <div class="bg-white d-none d-md-block bg-custom">
+        {{-- <div class="bg-white d-none d-md-block bg-custom">
             <div class="container-xl">
                 <div class="pt-2 pb-2">
                     <div class="row align-items-center">
@@ -64,19 +86,31 @@
                                 <div class="col-sm-1 text-right mt-3 p-xl-0 open_side_navigation">
                                     <a href="javascript::;" id="open_side_navigation" class="font-weight-bold pl-3 pr-4 pr-xl-0"><i class="fa-2x fas fa-bars" style="color:#000000"></i></a>
                                 </div>
-                                <!--<div class="col-sm-4 text-center mt-3" >
-                                    <a href="{{ route('search_advisor') }}" class="btn btn-sm nav-btn">Find me an advisor</a>
-                                </div>
-                                <div class="col-sm-3text-center mt-3" >
-                                    <a href="{{ route('search_advisor') }}" class="btn btn-sm nav-btn">Search advisors</a>
-                                </div> -->
                             </div>
-                        </div><!-- header right end -->
-                    </div><!-- logo area end -->
+                        </div>
+                    </div>
 
-                </div><!-- Row end -->
+                </div>
             </div>
-            <!-- Container end -->
+        </div> --}}
+        <div style="height: 100px;width:100%" class="header_part">
+            <div class="img_part">
+                {{-- <img style="width: 100%" src="{{asset('frontEnd/images/header_logo.jpg')}}" alt=""> --}}
+                <div class="row">
+                    <div class="col-sm-12 col-md-5 col-lg-5 pl-0">
+                        <img style="" class="header_logo " src="{{asset('image/logo.png')}}" alt="">
+
+                    </div>
+                    <div class="col-sm-12 col-md-5 col-lg-5">
+                        <nav class="nav">
+
+                        </nav>
+
+
+                    </div>
+                </div>
+
+            </div>
         </div>
 
         <nav class="navbar navbar-expand-md navbar-light bg-theme d-md-none mobile-menu">
@@ -145,4 +179,4 @@
             </ul>
         </div>
     </div>
-
+</body>
