@@ -14,12 +14,25 @@
     padding: 0px;
     }
     .header_logo{
-    height: 70%;
-    width:50%;
+    height: 100%;
+    width:60%;
     text-align: center;
     margin: auto;
     display: block;
     padding-top: 20px;
+    }
+    .navbar_link_part a{
+    font-size: 13px;
+    color:#FFFFFF;
+    padding: 7px;
+    font-weight: 600;
+        /* font-family:'Times New Roman', Times, serif */
+    }
+   .navbar_link_part a:hover{
+    font-size: 13px;
+    color:#000000;
+    padding: 7px;
+    font-weight: 600;
     }
     .buttonlogin {
     position: relative;
@@ -93,25 +106,49 @@
                 </div>
             </div>
         </div> --}}
-        <div style="height: 100px;width:100%" class="header_part">
-            <div class="img_part">
-                {{-- <img style="width: 100%" src="{{asset('frontEnd/images/header_logo.jpg')}}" alt=""> --}}
+        <div class="img_part">
+            <div class="container">
                 <div class="row">
-                    <div class="col-sm-12 col-md-5 col-lg-5 pl-0">
-                        <img style="" class="header_logo " src="{{asset('image/logo.png')}}" alt="">
+                    <div style="height: 100px;width:100%" class="header_part">
+                        <div class="">
+                            {{-- <img style="width: 100%" src="{{asset('frontEnd/images/header_logo.jpg')}}" alt=""> --}}
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4 col-lg-4 p-0">
+                                    <img style="" class="header_logo " src="{{asset('image/logo.png')}}" alt="">
 
-                    </div>
-                    <div class="col-sm-12 col-md-5 col-lg-5">
-                        <nav class="nav">
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-5 pl-0 pr-0 pt-4">
+                                    <nav class="navbar-expand-lg pl-0 pr-0">
+                                        <div class="">
+                                          <div class="navbar-nav navbar_link_part">
+                                            <a class="" href="#">Case Studies</a>
+                                            <a class="" href="#">Tips & guides</a>
+                                            <a class="" href="#">Find advisor</a>
+                                            <a class="" href="#">Campain</a>
+                                            <a class="" href="#">Blogs</a>
+                                          </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                                <div class="col-sm-12 col-md-2 col-lg-2 p-0">
+                                    <div class="text-left header-auth-button pt-2">
+                                        <strong>Are you an advisor?</strong> <br>
+                                        <a href="{{ route('login') }}" class="btn btn-md" style="background-color:#ffffff;color:#0396A6;">Log in</a>
+                                        <a href="{{ route('register') }}" class="btn btn-md" style="background-color:#ffffff;color:#0396A6;">Sign up</a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1 text-right mt-3 open_side_navigation pt-3">
+                                    <a href="javascript::;" id="open_side_navigation" class="font-weight-bold pl-3 pr-4 pr-xl-0"><i class="fa-2x fas fa-bars" style="color:#000000"></i></a>
+                                </div>
+                            </div>
 
-                        </nav>
-
-
+                        </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
+
 
         <nav class="navbar navbar-expand-md navbar-light bg-theme d-md-none mobile-menu">
             <a class="navbar-brand" href="{{ url('/') }}">
