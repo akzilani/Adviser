@@ -388,7 +388,7 @@
 
 
     <!-- Services -->
-    <section class="pb-4 pt-4">
+    <section id="case_studies_part" class="pb-4 pt-4">
         <div class="container-lg">
             <div class="row justify-content-center">
                 <div class="col-12" style="text-align:center !important">

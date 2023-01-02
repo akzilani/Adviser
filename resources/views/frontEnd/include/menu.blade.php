@@ -122,21 +122,24 @@
                 <div class="row">
                     <div style="height: 100px;width:100%" class="header_part">
                         <div class="">
-                            {{-- <img style="width: 100%" src="{{asset('frontEnd/images/header_logo.jpg')}}" alt=""> --}}
                             <div class="row">
                                 <div class="col-sm-12 col-md-4 col-lg-4 p-0">
-                                    <img style="" class="header_logo " src="{{asset('image/logo.png')}}" alt="">
+
+                                    <a class="d-block" href="{{ url('/') }}">
+                                        {{-- <img loading="lazy" src="{{ asset($system->logo ?? "image/logo.png") }}" alt="{{ config('app.name') }}" class="img-fluid"> --}}
+                                     <img style="" class="header_logo " src="{{asset('image/logo.png')}}" alt="">
+                                    </a>
 
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-5 pl-0 pr-0 pt-4">
                                     <nav class="navbar-expand-lg pl-0 pr-0">
                                         <div class="">
                                           <div class="navbar-nav navbar_link_part">
-                                            <a class="" href="#">Case Studies</a>
-                                            <a class="" href="#">Tips & guides</a>
+                                            <a class="" href="#case_studies_part">Case Studies</a>
+                                            <a class="" href="{{ route('tips_and_guides') }}">Tips & guides</a>
                                             <a class="" href="#">Find advisor</a>
-                                            <a class="" href="#">Campain</a>
-                                            <a class="" href="#">Blogs</a>
+                                            <a class="" href="{{ route('campain') }}">Campain</a>
+                                            <a class="" href="{{route('blogs')}}">Blogs</a>
                                           </div>
                                         </div>
                                     </nav>
@@ -178,7 +181,6 @@
                         <a class="nav-link text-white" href="{{ route('about_us') }}">About us </a>
                         <a class="nav-link text-white" href="{{ route('contact_us') }}">Contact us </a>
                         <a class="nav-link text-white" href="{{ route('privacy_policy') }}">Privacy policy</a>
-
                     </li>
                 </ul>
             </div>

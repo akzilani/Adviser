@@ -10,8 +10,8 @@
             background-image: url('{{asset('image/login-bg.png')}}');
         }
         .learn-button{text-align: center; border:1px solid #fff; padding: 10px 15px; color: #fff;}
-        .bg-custom, .footer, .mobile-menu{display: none !important;}        
-        
+        .bg-custom, .footer, .mobile-menu{display: none !important;}
+
     </style>
 @stop
 @section("vendor_script")
@@ -30,7 +30,7 @@
             <h2 class="text-center text-white p-5">Introducing The Auction Room Conversion Cloud</h2>
             <h4 class="text-center text-white p-3">Bid on the postcode. Bid on the portfolio size. Improve your digital advertising ROI.</h4>
             <div class="text-center m-5">
-                <a class="learn-button" target="_blank" href="https://www.rmtdirect.com">LEARN MORE</a>                
+                <a class="learn-button" target="_blank" href="https://www.rmtdirect.com">LEARN MORE</a>
             </div>
             <p class="text-center text-white p-5" >Driving conversions for Leading Financial Advisor Brands</p>
         </div>
@@ -39,14 +39,14 @@
                 <div class="card no-border">
                     <div class="card-header no-border pb-0">
                         <div class="row">
-                            <div class="col-6 text-center" style="background-color:#2E86C1;color:#FDFEFE;font-weight: bold;font-size:17px;height:30px;">Log in</div>
+                            <div class="col-6 text-center" style="background-color:#0396A6;color:#FDFEFE;font-weight: bold;font-size:17px;height:30px;">Log in</div>
                             <div class="col-6 text-center" style="background-color:#2ECC71;color:#FDFEFE;font-weight: bold;font-size:17px;height:30px;">
                                 <a class="" href="{{ route('register') }}">Sign up</a>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}">                        
+                        <form method="POST" action="{{ route('login') }}">
                             @csrf
 
                             <div class="form-group row">
@@ -80,14 +80,14 @@
 
                             <!-- Rechapcha --->
                             <div class="form-group">
-                                <div class="col-md-12 p-0">    
+                                <div class="col-md-12 p-0">
                                     {!! htmlFormSnippet() !!}
-                                    @if ($errors->has('g-recaptcha-response'))    
-                                        <span class="text-danger">    
+                                    @if ($errors->has('g-recaptcha-response'))
+                                        <span class="text-danger">
                                             {{ $errors->first('g-recaptcha-response') }}
                                         </span>
-                                    @endif    
-                                </div>    
+                                    @endif
+                                </div>
                             </div>
 
                             <div class="form-group row">
@@ -102,7 +102,7 @@
                                 </div>
                             </div>
 
-                            
+
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-12">
@@ -111,23 +111,23 @@
                                             {{ __('Forgot password?') }}
                                         </a>
                                     @endif
-                                    
+
                                     <br/>
 
-                                    <button type="submit" class="btn  no-radius " style="background-color:#2E86C1;color:#FDFEFE;font-weight: bold;width:100%;">
+                                    <button type="submit" class="btn  no-radius " style="background-color:#0396A6;color:#FDFEFE;font-weight: bold;width:100%;">
                                         {{ __('Login') }}
                                     </button>
 
-                                    
+
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-                
-            </div>            
+
+            </div>
         </div>
-        
+
     </div>
 </div>
 @stop
