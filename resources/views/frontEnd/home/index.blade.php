@@ -73,7 +73,7 @@
         }
 
         @media only screen and (max-width: 600px){
-        .ask-now, #question-submit{width: 100%;height:55px; font-size: 21px; padding: 10px;}
+        .ask-now, #question-submit{width: 100%;height:55px; font-size: 14px; padding: 10px;}
         .ask-now_2, #question-submit{width: 100%;height:55px; font-size: 17px; padding: 10px;}
         .question-box{width: 100%;margin-left: 0px;margin-bottom:0em;}
         .quick-response{margin-left:-1.3em;}

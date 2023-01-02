@@ -69,6 +69,17 @@
     opacity: 1;
     transition: 0s
     }
+@media all and (max-width: 600px) {
+.img_part{
+    display: none;
+}
+}
+@media all and (max-width: 320px) {
+.img_part{
+    display: none;
+}
+}
+
 </style>
 
 
@@ -133,12 +144,12 @@
                                 <div class="col-sm-12 col-md-2 col-lg-2 p-0">
                                     <div class="text-left header-auth-button pt-2">
                                         <strong>Are you an advisor?</strong> <br>
-                                        <a href="{{ route('login') }}" class="btn btn-md" style="background-color:#ffffff;color:#0396A6;">Log in</a>
-                                        <a href="{{ route('register') }}" class="btn btn-md" style="background-color:#ffffff;color:#0396A6;">Sign up</a>
+                                        <a href="{{ route('login') }}" class="btn btn-md font-weight-bold" style="background-color:#ffffff;color:#0396A6;">Log in</a>
+                                        <a href="{{ route('register') }}" class="btn btn-md font-weight-bold" style="background-color:#ffffff;color:#0396A6;">Sign up</a>
                                     </div>
                                 </div>
                                 <div class="col-sm-1 text-right mt-3 open_side_navigation pt-3">
-                                    <a href="javascript::;" id="open_side_navigation" class="font-weight-bold pl-3 pr-4 pr-xl-0"><i class="fa-2x fas fa-bars" style="color:#000000"></i></a>
+                                    <a href="javascript::;" id="open_side_navigation" class="font-weight-bold pl-3 pr-4 pr-xl-0"><i class="fa-2x fas fa-bars" style="color:#ffffff"></i></a>
                                 </div>
                             </div>
 
@@ -152,7 +163,7 @@
 
         <nav class="navbar navbar-expand-md navbar-light bg-theme d-md-none mobile-menu">
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('image/logo-white.png') }}" alt="{{ config('app.name') }}" class="img-fluid" style="height: 55px;">
+                <img src="{{ asset('image/logo_mobile.png') }}" alt="{{ config('app.name') }}" class="img-fluid" style="height: 55px;">
             </a>
             <button class="navbar-toggler bg-theme" type="button" data-toggle="collapse" data-target="#navigation_menu" aria-controls="navigation_menu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -167,15 +178,11 @@
                         <a class="nav-link text-white" href="{{ route('about_us') }}">About us </a>
                         <a class="nav-link text-white" href="{{ route('contact_us') }}">Contact us </a>
                         <a class="nav-link text-white" href="{{ route('privacy_policy') }}">Privacy policy</a>
-                        <!-- <a class="nav-link text-white" href="{{ route('advisor.subscription_plan') }}">Our plans</a> -->
-                        <!-- <a class="nav-link text-white" href="{{ route('legal_stuff') }}">Legal stuff</a> -->
-
 
                     </li>
                 </ul>
             </div>
-          </nav>
-        <!-- Navigation end -->
+        </nav>
     </header>
     <!-- Header end -->
 
