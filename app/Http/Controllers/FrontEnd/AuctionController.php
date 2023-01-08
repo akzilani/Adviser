@@ -51,14 +51,14 @@ class AuctionController extends Controller
     /**
      * Show auction List  without Archive
      */
-    public function index(Request $request){        
+    public function index(Request $request){
         if( $request->ajax() ){
             return $this->getDataTable($request);
         }
-        
+
 
         //$this->saveActivity($request, "View Auction Table");
-        
+
         $params = [
             'nav'               => 'auction',
             'subNav'            => 'auction.list',
@@ -70,19 +70,19 @@ class AuctionController extends Controller
             'modalSizeClass'    => "modal-lg",
             'table_responsive'  => "table-responsive",
             "enable_trems_and_condition"=> $request->user()->accept_auction_condition
-            
+
         ];
         return view('frontEnd.advisor.auction.table', $params);
     }
 
     /**
-     * Show Search Local auction List 
+     * Show Search Local auction List
      */
-    public function searchLocally(Request $request){        
+    public function searchLocally(Request $request){
         if( $request->ajax() ){
             return $this->getDataTable($request, 'search_locally');
         }
-        
+
         //$this->saveActivity($request, "View Search Local Auction Table");
         $params = [
             'nav'               => 'auction',
@@ -95,19 +95,19 @@ class AuctionController extends Controller
             'modalSizeClass'    => "modal-lg",
             'table_responsive'  => "table-responsive",
             "enable_trems_and_condition"=> $request->user()->accept_auction_condition
-            
+
         ];
         return view('frontEnd.advisor.auction.table', $params);
     }
 
     /**
-     * Show Match Me auction List 
+     * Show Match Me auction List
      */
-    public function matchMe(Request $request){        
+    public function matchMe(Request $request){
         if( $request->ajax() ){
             return $this->getDataTable($request, 'match_me');
         }
-        
+
         //$this->saveActivity($request, "View Match Me Auction Table");
         $params = [
             'nav'               => 'auction',
@@ -120,7 +120,7 @@ class AuctionController extends Controller
             'modalSizeClass'    => "modal-lg",
             'table_responsive'  => "table-responsive",
             "enable_trems_and_condition"=> $request->user()->accept_auction_condition
-            
+
         ];
         return view('frontEnd.advisor.auction.table', $params);
     }
@@ -147,23 +147,23 @@ class AuctionController extends Controller
     /**
      * Save / Update auction Information
      */
-    public function bid(Request $request){        
+    public function bid(Request $request){
         try{
             DB::beginTransaction();
             $auction = $this->getModel()->where('id', $request->id)->where('end_time', '>=', now()->format('Y-m-d H:i:s'))->where('status', 'running')->first();
-            
+
             if( empty($auction) ){
                 $this->message = "Sorry! This Auction's BID time has been expired Or auction is not running at this time. You can't bid";
                 return $this->output();
             }
             // $bid = AuctionBid::where('auction_id', $auction->id)->where('bidder_id', $request->user()->id)->first();
             $min_bid_price = $auction->base_price > $auction->min_bid_price ? ($auction->base_price) : ($auction->min_bid_price);
-            
+
             if( empty($request->min_bid_price) || $request->min_bid_price < $min_bid_price){
                 $this->message = "Sorry! You can't bid lower than minimum BID price";
                 return $this->output();
             }
-            
+
             $bid = new AuctionBid();
             $bid->auction_id = $auction->id;
             $bid->bidder_id  = $request->user()->id;
@@ -177,7 +177,7 @@ class AuctionController extends Controller
             if($auction->buy_out_price != 0 && $auction->buy_out_price <= $bid->bid_price){
                 $buy_out_mail_send = !empty($request->buy_out) && $request->buy_out == 1 ? true : false;
                 (new CommandsAuction())->completeAuction($auction, $buy_out_mail_send);
-                
+
                 $msg = "Buy out button on ".$auction-> post_code. " for £".$auction->buy_out_price. " activated ";
 
                 //$msg = implode(' ', array($postcode, $reserveprice,$buyoutprice , $primaryregion, $name));
@@ -186,14 +186,14 @@ class AuctionController extends Controller
             else{
                 event(new EventsAuctionBid($auction));
             }
-            
-            DB::commit();           
-            
-            
+
+            DB::commit();
+
+
             $this->success('Your bid has been submitted successfully');
-            
+
             $auction = $this->getModel()->where('auctions.id', $request->id)->select('auctions.*')->first();
-            
+
             //New Activity Message
             $id =  $request->user()->id;
             $name = User::where('id', $id)->first(['first_name'])->first_name;
@@ -201,12 +201,12 @@ class AuctionController extends Controller
             $reserveprice =  ",<br> reserve price £".$request->min_bid_price.".00" ;
             $buyoutprice = ", <br>buy out price £".$auction->buy_out_price .".00"  ;
             $primaryregion = ", <br>sent to ".$auction->primary_reason();
-            
+
             $msg = "Bid made on ".$auction-> post_code. " for £".$request->min_bid_price;
 
             //$msg = implode(' ', array($postcode, $reserveprice,$buyoutprice , $primaryregion, $name));
             $this->saveActivity($request, $msg);
-            
+
         }catch(Exception $e){
             DB::rollBack();
             $this->message = $this->getError($e);
@@ -214,7 +214,7 @@ class AuctionController extends Controller
         return $this->output();
     }
 
-    
+
     /**
      * View Auction Details
      */
@@ -283,21 +283,21 @@ class AuctionController extends Controller
         return DataTables::of($data)
         ->addColumn('index', function(){ return ++$this->index; })
         ->addColumn('max_bidder', function($row){ return isset($row->max_bidder->first_name) ? ($row->max_bidder->first_name . ' ' . $row->max_bidder->last_name) : "N/A"; })
-        ->editColumn('base_price', function($row) use($system){ 
-            return $row->base_price == 0 ? 'No reserve price' : ($system->currency_symbol.number_format($row->base_price, 2)); 
+        ->editColumn('base_price', function($row) use($system){
+            return $row->base_price == 0 ? 'No reserve price' : ($system->currency_symbol.number_format($row->base_price, 2));
         })
         ->editColumn('buy_out_price', function($row) use($system){ return $system->currency_symbol. number_format($row->buy_out_price ?? 0, 2); })
         ->editColumn('current_bid_price', function($row) use($system){ return $system->currency_symbol. number_format($row->bid_win->bid_price ?? 0, 2); })
         ->editColumn('min_bid_price', function($row) use($system){ return $system->currency_symbol. number_format($row->min_bid_price, 2); })
         ->addColumn('question', function($row){ return wordwrap($row->question ?? "", "60", "<br>"); })
-        ->addColumn('fund_size', function($row){ return $row->fund_size->name ?? "N/A"; })         
+        ->addColumn('fund_size', function($row){ return $row->fund_size->name ?? "N/A"; })
         ->addColumn('primary_reason', function($row){ return str_replace(',', ',<br>', $row->primary_reason()); })
         ->addColumn('area_of_advice', function($row){ return str_replace(',', ',<br>', $row->service_offered()); })
         ->editColumn("created_by", function($row){ return $row->createdBy->name ?? "N/A"; })
         ->editColumn("updated_by", function($row){ return $row->updatedBy->name ?? "N/A"; })
         ->editColumn("type", function($row){ return ucwords($row->type); })
         ->addColumn('auction_time', function($row) use ($system){
-            return Carbon::parse($row->start_time)->format($system->date_format. ' h:i A') . '<br> To <br> ' . Carbon::parse($row->end_time)->format($system->date_format. ' h:i A');
+            return Carbon::parse($row->start_time)->format($system->date_format. ' h:i A') . '<br> to <br> ' . Carbon::parse($row->end_time)->format($system->date_format. ' h:i A');
         })
         ->addColumn('remain_time', function($row){
             if($row->status == "cancelled"){
@@ -308,7 +308,7 @@ class AuctionController extends Controller
                 return "Finished";
             }
         })
-        ->editColumn("status", function($row){ 
+        ->editColumn("status", function($row){
             if($row->status == "cancelled"){
                 return $this->getStatus($row->status);
             }
@@ -320,7 +320,7 @@ class AuctionController extends Controller
                 return $this->getStatus("completed");
             }
         })
-        ->addColumn('action', function($row){                
+        ->addColumn('action', function($row){
             $li = '<a href="'.route('advisor.auction.view',['id' => $row->id]).'" class="ajax-click-page btn btn-sm btn-info" title="View Details" > <span class="fa fa-eye"></span> </a> ';
             if( (now() >= $row->start_time && now() <= $row->end_time) && $row->status != "cancelled" ){
                 $li .= '<a href="'.route('advisor.auction.bid',['id' => $row->id]).'" class="ajax-click-page btn btn-sm btn-primary" title="Bid Now" > <span class="fa fa-edit"></span> Bid</a> ';
@@ -331,5 +331,5 @@ class AuctionController extends Controller
         ->make(true);
     }
 
-    
+
 }

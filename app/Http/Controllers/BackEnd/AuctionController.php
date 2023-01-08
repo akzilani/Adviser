@@ -52,11 +52,11 @@ class AuctionController extends Controller
     /**
      * Show auction List  without Archive
      */
-    public function index(Request $request){        
+    public function index(Request $request){
         if( $request->ajax() ){
             return $this->getDataTable($request);
         }
-        
+
         $params = [
             'nav'               => 'auction',
             'subNav'            => 'auction.list',
@@ -75,11 +75,11 @@ class AuctionController extends Controller
     /**
      * Show auction Archive List  without Archive
      */
-    public function archiveList(Request $request){        
+    public function archiveList(Request $request){
         if( $request->ajax() ){
             return $this->getDataTable($request, "archive");
         }
-        
+
         $params = [
             'nav'               => 'auction',
             'subNav'            => 'auction.archive_list',
@@ -95,13 +95,13 @@ class AuctionController extends Controller
     }
 
     /**
-     * Show Search Local auction List 
+     * Show Search Local auction List
      */
-    public function searchLocally(Request $request){        
+    public function searchLocally(Request $request){
         if( $request->ajax() ){
             return $this->getDataTable($request, 'search_locally');
         }
-        
+
         $params = [
             'nav'               => 'auction',
             'subNav'            => 'auction.search_locally',
@@ -112,19 +112,19 @@ class AuctionController extends Controller
             'tableStyleClass'   => 'bg-success',
             'modalSizeClass'    => "modal-lg",
             'table_responsive'  => "table-responsive",
-            
+
         ];
         return view('backEnd.table', $params);
     }
 
     /**
-     * Show Match Me auction List 
+     * Show Match Me auction List
      */
-    public function matchMe(Request $request){        
+    public function matchMe(Request $request){
         if( $request->ajax() ){
             return $this->getDataTable($request, 'match_me');
         }
-        
+
         $params = [
             'nav'               => 'auction',
             'subNav'            => 'auction.match_me',
@@ -135,7 +135,7 @@ class AuctionController extends Controller
             'tableStyleClass'   => 'bg-success',
             'modalSizeClass'    => "modal-lg",
             'table_responsive'  => "table-responsive",
-            
+
         ];
         return view('backEnd.table', $params);
     }
@@ -177,7 +177,7 @@ class AuctionController extends Controller
     /**
      * Save / Update auction Information
      */
-    public function store(Request $request){        
+    public function store(Request $request){
         if( !AccessController::checkAccess('auction_create') ){
             return $this->accessDenie();
         }
@@ -195,13 +195,13 @@ class AuctionController extends Controller
                 'base_price'            => ['required','numeric','min:0'],
                 'post_code'             => ['required', 'string']
             ]);
-            
+
             if( $validator->fails()){
                 $this->message = $this->getValidationError($validator);
                 $this->modal = false;
                 return $this->output();
             }
-            
+
             if( $request->id == 0 ){
                 if( !AccessController::checkAccess('auction_create') ){
                     return $this->accessDenie();
@@ -216,12 +216,12 @@ class AuctionController extends Controller
                 $data = $this->getModel()->find($request->id);
                 $data->updated_by = $request->user()->id;
                 $message = 'Auction information updated successfully';
-            } 
-            
+            }
+
             if($request->start_time < date('H:i:s')){
                 $request->start_time = date('H:i:s');
             }
-                                  
+
             $data->primary_region_id    = $request->primary_region_id;
             $data->fund_size_id         = $request->fund_size_id;
             $data->profession_id        = $request->profession_id;
@@ -230,17 +230,17 @@ class AuctionController extends Controller
             $data->start_time       = $request->start_date .' '.$request->start_time;
             $data->end_time         = $this->getEndTime($request);
             $data->duration         = $request->end_time;
-            $data->base_price       = $request->base_price; // base price ==> Reserve Price                        
-            $data->min_bid_price    = $request->base_price;                     
-            $data->buy_out_price    = $request->buy_out_price;                     
-            $data->bid_increment    = $request->bid_increment;                        
+            $data->base_price       = $request->base_price; // base price ==> Reserve Price
+            $data->min_bid_price    = $request->base_price;
+            $data->buy_out_price    = $request->buy_out_price;
+            $data->bid_increment    = $request->bid_increment;
             $data->status           = $request->status;
-            $data->service_offer_id = $request->service_offer_id;                       
-            $data->question         = $request->question;                       
+            $data->service_offer_id = $request->service_offer_id;
+            $data->question         = $request->question;
             $data->type             = $request->type;
             $data->save();
-            
-            //New Activity 
+
+            //New Activity
             $activity = "Auction ". ($request->id == 0 ? "Created " : "updated") ." for ". $data->post_code.",
                 <br>Reserve price £" . $data->base_price . ",
                 <br>Buy out price £". $data->buy_out_price .",
@@ -328,7 +328,7 @@ class AuctionController extends Controller
         }
         return $end_time;
     }
-    
+
     /**
      * View Auction Details
      */
@@ -364,7 +364,7 @@ class AuctionController extends Controller
      */
     public function restore(Request $request){
         try{
-            
+
             $data = $this->getModel()->withTrashed()->find($request->id);
             $data->restore();
             $this->success('Auction restored successfully');
@@ -380,7 +380,7 @@ class AuctionController extends Controller
      */
     public function delete(Request $request){
         try{
-            
+
             $data = $this->getModel()->withTrashed()->find($request->id);
             $data->forceDelete();
             $this->success('Auction Deleted successfully');
@@ -419,22 +419,22 @@ class AuctionController extends Controller
         return DataTables::of($data)
             ->addColumn('index', function(){ return ++$this->index; })
             ->addColumn('max_bidder', function($row){ return isset($row->max_bidder->first_name) ? ($row->max_bidder->first_name . ' ' . $row->max_bidder->last_name) : "N/A"; })
-            ->editColumn('base_price', function($row) use($system){ 
-                return $row->base_price == 0 ? 'No reserve price' : ($system->currency_symbol. number_format($row->base_price, 2)); 
+            ->editColumn('base_price', function($row) use($system){
+                return $row->base_price == 0 ? 'No reserve price' : ($system->currency_symbol. number_format($row->base_price, 2));
             })
             ->editColumn('buy_out_price', function($row) use($system){ return $system->currency_symbol. number_format($row->buy_out_price ?? 0, 2); })
             ->editColumn('current_bid_price', function($row) use($system){ return $system->currency_symbol. number_format($row->bid_win->bid_price ?? 0, 2); })
             ->editColumn('min_bid_price', function($row) use($system){ return $system->currency_symbol. number_format($row->min_bid_price, 2); })
             ->editColumn('final_bid_price', function($row) use($system){ return $system->currency_symbol. number_format($row->bid_win->bid_price ?? 0, 2); })
             ->addColumn('question', function($row){ return wordwrap($row->question ?? "", "60", "<br>"); })
-            ->addColumn('fund_size', function($row){ return $row->fund_size->name ?? "N/A"; })         
+            ->addColumn('fund_size', function($row){ return $row->fund_size->name ?? "N/A"; })
             ->addColumn('primary_reason', function($row){ return str_replace(',', ',<br>', $row->primary_reason()); })
             ->addColumn('area_of_advice', function($row){ return str_replace(',', ',<br>', $row->service_offered()); })
             ->editColumn("created_by", function($row){ return $row->createdBy->name ?? "N/A"; })
             ->editColumn("updated_by", function($row){ return $row->updatedBy->name ?? "N/A"; })
             ->editColumn("type", function($row){ return ucwords($row->type); })
             ->addColumn('auction_time', function($row) use ($system){
-                return Carbon::parse($row->start_time)->format($system->date_format. ' h:i A') . ' <br>To<br> ' . Carbon::parse($row->end_time)->format($system->date_format. ' h:i A');
+                return Carbon::parse($row->start_time)->format($system->date_format. ' h:i A') . ' <br>to<br> ' . Carbon::parse($row->end_time)->format($system->date_format. ' h:i A');
             })
             ->addColumn('remain_time', function($row){
                 if($row->status == "cancelled"){
@@ -443,9 +443,9 @@ class AuctionController extends Controller
                     return $this->getTimeDiffrent(now(), $row->end_time);
                 }else{
                     return "Finished";
-                }            
+                }
             })
-            ->editColumn("status", function($row){ 
+            ->editColumn("status", function($row){
                 if($row->status == "cancelled"){
                     return $this->getStatus($row->status);
                 }
@@ -457,9 +457,9 @@ class AuctionController extends Controller
                     return $this->getStatus("completed");
                 }
             })
-            ->addColumn('action', function($row) use($type){                
+            ->addColumn('action', function($row) use($type){
                 $li = '<a href="'.route('auction.view',['id' => $row->id]).'" class="ajax-click-page btn btn-sm btn-info" title="View Details" > <span class="fa fa-eye"></span> </a> ';
-                
+
                 if($type == "archive"){
                     if(AccessController::checkAccess("auction_delete")){
                         $li .= '<a href="'.route('auction.delete',['id' => $row->id]).'" class="ajax-click btn btn-sm btn-danger " > <span class="fa fa-trash" title="Delete" ></span> </a> ';
@@ -476,7 +476,7 @@ class AuctionController extends Controller
                     }
                 }
                 return $li;
-            })   
+            })
             ->rawColumns(['action', 'status', 'question', "area_of_advice", "service_offer", "primary_reason", "auction_time"])
             ->make(true);
     }
@@ -500,18 +500,18 @@ class AuctionController extends Controller
     /**
      * Show Accept Auction Condition List
      */
-    public function acceptConditionList(Request $request){        
+    public function acceptConditionList(Request $request){
         if( $request->ajax() ){
             return $this->getActivityDataTable($request);
         }
-        
+
         $params = [
             'nav'               => 'auction',
             'subNav'            => 'auction.accept_list',
             'tableColumns'      => $this->getAcceptColumns(),
             'dataTableColumns'  => $this->getAcceptDataTableColumns(),
             'dataTableUrl'      => Null,
-            
+
             'pageTitle'         => 'Accept Terms and Conditions',
             'tableStyleClass'   => 'bg-success',
         ];
@@ -530,7 +530,7 @@ class AuctionController extends Controller
             ->addColumn("time", function($row) use($system){
                 return Carbon::parse($row->created_at)->format($system->date_format. ' h:i A');
             })
-            
+
             ->make(true);
     }
 }
