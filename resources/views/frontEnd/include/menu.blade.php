@@ -138,7 +138,7 @@
                                             <a class="" href="#case_studies_part">Case Studies</a>
                                             <a class="" href="{{ route('tips_and_guides') }}">Tips & guides</a>
                                             <a class="" href="{{ route('search_advisor', ['Mortgage-Advisor']) }}">Find advisor</a>
-                                            <a class="" href="{{ route('campain') }}">Campain</a>
+                                            <a class="" href="{{ route('campain') }}">campaign</a>
                                             <a class="" href="{{route('blogs')}}">Blogs</a>
                                           </div>
                                         </div>
