@@ -264,12 +264,14 @@
                 </div>
                 <div class="col-sm-12 col-md-4 col-lg-3 ml-0 question-right-box mt-5 mt-md-5 mt-md-5">
                     <ol>
+                        <br>
                         <li><b>Ask Your Question</b></li>
                         <li><b>Enter Your Contact Details</b> <br/> A financial advisor usually responds in minutes.</li>
                         <li><b>Select Your Local Expert</b> <br/> Refine your search using our unique Match Rating ™ tool or simply let us match you.
                         <br> </br>
-                        <b><i class="fas fa-lock text-success"></i> <strong>GDPR Compliant.</strong></b> <br/> Please view our <a href="{{ route('privacy_policy') }}" target="_blank">Privacy Policy</a> <br>
-                        By submitting your details, you agree to be connected with a financial advisor. </li>
+
+                        {{-- <b><i class="fas fa-lock text-success"></i> <strong>GDPR Compliant.</strong></b> <br/> Please view our <a href="{{ route('privacy_policy') }}" target="_blank">Privacy Policy</a> <br>
+                        By submitting your details, you agree to be connected with a financial advisor. </li> --}}
                     </ol>
                 </div>
             </div>
