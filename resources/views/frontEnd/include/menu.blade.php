@@ -146,7 +146,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-2 col-lg-2 p-0">
                                     <div class="text-left header-auth-button pt-2">
-                                        <strong>Are you an advisor?</strong> <br>
+                                        <strong style="color:#000000">Are you an advisor?</strong> <br>
                                         <a href="{{ route('login') }}" class="btn btn-md font-weight-bold" style="background-color:#ffffff;color:#0396A6;">Log in</a>
                                         <a href="{{ route('register') }}" class="btn btn-md font-weight-bold" style="background-color:#ffffff;color:#0396A6;">Sign up</a>
                                     </div>
