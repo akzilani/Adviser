@@ -7,8 +7,8 @@
         .form-control{height: 30px; border:1px solid #333;}
         .form-group{margin-bottom:.5px; }
         label{margin-bottom:0rem; }
-        #footer, .open_side_navigation, .tips_and_guides{ display: none; }
-        .header-auth-button{display: none;}
+        /* #footer, .open_side_navigation, .tips_and_guides{ display: none; } */
+        /* .header-auth-button{display: none;} */
         .footer-plan{position: absolute; right: 40px; top:55px;}
     </style>
 @stop
@@ -27,7 +27,7 @@
                         <p class="text-white font-weight-bold" style="font-size:38px;padding-bottom:10px;">the right</p>
                         <p class="text-white font-weight-bold" style="font-size:38px;padding-bottom:10px;">approach...</p>
                         <br/><br/>
-                        <p class="text-white font-weight-bold" style="font-size:22px;padding-bottom:5px;">Join hundreds of financial and mortgage</p> 
+                        <p class="text-white font-weight-bold" style="font-size:22px;padding-bottom:5px;">Join hundreds of financial and mortgage</p>
                         <p class="text-white font-weight-bold" style="font-size:22px;padding-bottom:5px;">advisors bidding for leads  through</p>
                         <p class="text-white font-weight-bold" style="font-size:22px;padding-bottom:5px;">Regulated Advice.</p>
                     @endif
@@ -48,7 +48,7 @@
                                     <option value="Mortgage Leads">Mortgage Leads</option>
                                     <option value="Equity Release Leads">Equity Release Leads</option>
                                 </select>
-                                @if($errors->has('service_interest'))                                
+                                @if($errors->has('service_interest'))
                                     <span class="text-danger font-10" role="alert">
                                         <strong>{{ $errors->first('service_offer_id') }}</strong>
                                     </span>
@@ -122,26 +122,26 @@
                             </div>
                             <div class="form-group pb-0 mb-0">
                                 <label class="font-12">
-                                    <input type="checkbox" name="store_data" value="1" checked > 
+                                    <input type="checkbox" name="store_data" value="1" checked >
                                     Consent to store your data
                                 </label>
                             </div>
                             <div class="form-group pb-0 mb-0">
                                 <label class="font-12">
-                                    <input type="checkbox" name="call_permission" value="1" checked > 
+                                    <input type="checkbox" name="call_permission" value="1" checked >
                                     Permission to Phone
                                 </label>
                             </div>
                             <div class="form-group pb-0 mb-0">
                                 <label class="font-12">
-                                    <input type="checkbox" name="email_permission" value="1" checked > 
+                                    <input type="checkbox" name="email_permission" value="1" checked >
                                     Permission to Email
                                 </label>
                             </div>
 
                             <div class="form-group pb-0 mb-0">
                                 <label class="font-12">
-                                    <input type="checkbox" name="text_permission" value="1" checked > 
+                                    <input type="checkbox" name="text_permission" value="1" checked >
                                     Permission to Text
                                 </label>
                             </div>
@@ -178,7 +178,7 @@
             </div>
         </div>
     </section>
-    
+
     <br/>
 
     <!-- Image & Text -->
@@ -195,10 +195,10 @@
                     </p>
                 </div>
             </div>
-            
+
             <br/>
 
-            <div class="row mt-4">                
+            <div class="row mt-4">
                 <div class="col-12 col-sm-6">
                     <h3 class="text-theme">Auction Room</h3>
                     <p>
@@ -209,10 +209,10 @@
                     <img src="{{ asset('image/auction-room.jpg') }}" class="img-fluid">
                 </div>
             </div>
-            
+
             <br/>
 
-            <div class="row mt-4">                
+            <div class="row mt-4">
                 <div class="col-12 col-sm-6 text-center">
                     <img src="{{ asset('image/campaign-match-rating.jpg') }}" class="img-fluid">
                 </div>
@@ -224,7 +224,7 @@
                 </div>
             </div>
             <br/>
-            <div class="row mt-3">                
+            <div class="row mt-3">
                 <div class="col-12 col-sm-6">
                     <h3 class="text-theme">Build your profile </h3>
                     <p>
@@ -233,7 +233,7 @@
                 <div class="col-12 col-sm-6 text-center">
                     <video controls style="width: 100%;height:350px;" poster="{{ asset('video/profile.jpg') }}" style="border:1px solid #eee">
                         <source src="{{ asset('video/profile.mp4') }}" type="video/mp4">
-                    </video> 
+                    </video>
                    <!--  <img src="{{ asset('image/profile.jpg') }}" class="img-fluid">-->
                 </div>
             </div>
@@ -265,24 +265,24 @@
     <!-- Video -->
     <!--<section class="pt-0 pb-0">
         <div class="container-lg">
-            <div class="row">                
+            <div class="row">
                 <div class="col-12  col-md-6 mt-4">
                     <video controls style="width: 100%;height:400px;" poster="{{ asset('video/profile.jpg') }}" style="border:1px solid #eee">
                         <source src="{{ asset('video/profile.mp4') }}" type="video/mp4">
-                    </video> 
+                    </video>
                 </div>
-                
+
                 <div class="col-12 col-md-6 mt-4">
                     <video controls style="width: 100%;height:400px;" poster="{{ asset('video/auction_room.jpg') }}" style="border:1px solid #eee">
                         <source src="{{ asset('video/auction_room.mp4') }}" type="video/mp4">
-                    </video> 
+                    </video>
                 </div>
             </div>
         </div>
     </section>
     <br/>
     -->
-    
+
     <br/><br/>
 
     <div class="copyright" style="background: url('{{ asset('image/footer.png') }}'); min-height:200px;background-size:cover;background-position:center">
@@ -305,7 +305,7 @@
                     <div class="copyright-info font-12" style="font-style:bold;">
                          {!! $footer_copyright !!}
                     </div>
-                   
+
                 </div>
                 <!--
                 <div class="footer-plan">
@@ -328,7 +328,7 @@
             <div class="row">
                 <div class="col-12 text-right">
                     <button class="btn btn-default close-popup" title="Close"><i class="far fa-times-circle" style="font-size:36px;color:red;"></i></button>
-                </div>                
+                </div>
             </div>
             <div class="container-md">
                 <div class="row">
