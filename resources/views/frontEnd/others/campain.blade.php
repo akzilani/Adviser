@@ -170,7 +170,7 @@
             <div class="row">
                 <div class="col-12">
                     <p class="text-theme m-0 font-13">DO A BRILLIANT JOB FOR YOUR CLIENTS</p>
-                    <h3 class="text-theme">Regulated Advice bidding platform</h3>
+                    <h3 class="text-theme">Adviser Bangladesh bidding platform</h3>
                 </div>
                 <div class="col-12 ">
                      {!! $campain_page_1 !!}
@@ -186,7 +186,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12 col-sm-6 text-center">
-                    <img src="{{ asset('image/Top rated icons_300x180.png') }}" class="img-fluid">
+                    <img src="{{ asset('image/logo.png') }}" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-6">
                     <h3 class="text-theme">Powerful tools</h3>
@@ -198,7 +198,7 @@
 
             <br/>
 
-            <div class="row mt-4">
+            {{-- <div class="row mt-4">
                 <div class="col-12 col-sm-6">
                     <h3 class="text-theme">Auction Room</h3>
                     <p>
@@ -208,11 +208,11 @@
                 <div class="col-12 col-sm-6 text-center">
                     <img src="{{ asset('image/auction-room.jpg') }}" class="img-fluid">
                 </div>
-            </div>
+            </div> --}}
 
             <br/>
 
-            <div class="row mt-4">
+            {{-- <div class="row mt-4">
                 <div class="col-12 col-sm-6 text-center">
                     <img src="{{ asset('image/campaign-match-rating.jpg') }}" class="img-fluid">
                 </div>
@@ -222,9 +222,9 @@
                         {!! $campain_page_4 !!}
                     </p>
                 </div>
-            </div>
+            </div> --}}
             <br/>
-            <div class="row mt-3">
+            {{-- <div class="row mt-3">
                 <div class="col-12 col-sm-6">
                     <h3 class="text-theme">Build your profile </h3>
                     <p>
@@ -236,11 +236,11 @@
                     </video>
                    <!--  <img src="{{ asset('image/profile.jpg') }}" class="img-fluid">-->
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
 
-    <section style="background: #fff;" class="pt-4 pb-4">
+    {{-- <section style="background: #fff;" class="pt-4 pb-4">
         <div class="container-lg">
             <div class="row">
                 <div class="col-12">
@@ -249,43 +249,16 @@
                 </div>
                 <div class="col-12">
                      {!! $campain_page_6 !!}
-                    <!--<p class="mb-0">You can become a member by simply choosing a plan that suits your needs. </p>
-                    <p >The benefits of a plan are as follows:</p>
 
-                    <p class="mb-0">1. Fully verified Regulated Advice profile</p>
-                    <p class="mb-0">2. The ability to receive unlimited leads per month to a pre-set wealth criteria and fixed price</p>
-                    <p class="mb-0">3. Minimal work required to ensure a 5-star Match Rating in your local area </p>
-                    <p class="mb-0">4. Strong page one Google presence</p>
-                    <p class="mb-0">5. Access to powerful tools that can help generate more prospects</p>-->
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    <!-- Video -->
-    <!--<section class="pt-0 pb-0">
-        <div class="container-lg">
-            <div class="row">
-                <div class="col-12  col-md-6 mt-4">
-                    <video controls style="width: 100%;height:400px;" poster="{{ asset('video/profile.jpg') }}" style="border:1px solid #eee">
-                        <source src="{{ asset('video/profile.mp4') }}" type="video/mp4">
-                    </video>
-                </div>
-
-                <div class="col-12 col-md-6 mt-4">
-                    <video controls style="width: 100%;height:400px;" poster="{{ asset('video/auction_room.jpg') }}" style="border:1px solid #eee">
-                        <source src="{{ asset('video/auction_room.mp4') }}" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
-    </section>
-    <br/>
-    -->
 
     <br/><br/>
 
-    <div class="copyright" style="background: url('{{ asset('image/footer.png') }}'); min-height:200px;background-size:cover;background-position:center">
+    {{-- <div class="copyright" style="background: url('{{ asset('image/footer.png') }}'); min-height:200px;background-size:cover;background-position:center">
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-12">
@@ -299,31 +272,25 @@
                             <p class="p-0 m-0 text-white font-12" >Use of the service is subject to our Terms & Condition and Privacy Policy</p>
                         @endif
                     </div>
-                    <!--<div class="copyright-info font-12" style="font-style:bold;">
-                        © 2016 – {{ date('Y') }} RMT Group (UK) Ltd. All Rights Reserved. </span>Developed by <a href="https://lamptechs.com" target="_blank"><u>Lamp Techs.</u></a>
-                    </div>-->
+
                     <div class="copyright-info font-12" style="font-style:bold;">
                          {!! $footer_copyright !!}
                     </div>
 
                 </div>
-                <!--
-                <div class="footer-plan">
-                    <a href="{{ route('advisor.subscription_plan') }}" class="btn btn-warning no-radius" >Pricing</a>
-                </div>
-                -->
-            </div><!-- Row end -->
+
+            </div>
 
             <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
                 <button class="btn btn-primary" title="Back to Top">
                     <i class="fa fa-angle-double-up"></i>
                 </button>
             </div>
-        </div><!-- Container end -->
-    </div><!-- Copyright end -->
+        </div>
+    </div> --}}
 
     <!-- Custom Popup -->
-    @if( !empty($dynamic_popup) )
+    {{-- @if( !empty($dynamic_popup) )
         <div class="custom-popup d-none center" style="text-align:center">
             <div class="row">
                 <div class="col-12 text-right">
@@ -339,5 +306,5 @@
                 </div>
             </div>
         </div>
-    @endif
+    @endif --}}
 @endsection
